@@ -401,7 +401,7 @@ func createPatch(mapping *meta.RESTMapping, target, current runtime.Object) ([]b
 
 	// While different objects need different merge types, the parent function
 	// that calls this does not try to create a patch when the data (first
-	// returned object) is nil. We can skip calculating the the merge type as
+	// returned object) is nil. We can skip calculating the merge type as
 	// the returned merge type is ignored.
 	if apiequality.Semantic.DeepEqual(oldData, newData) {
 		return nil, types.StrategicMergePatchType, nil
